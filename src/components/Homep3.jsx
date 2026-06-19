@@ -1,0 +1,174 @@
+import React from 'react'
+import { Check, ChevronDown, ChevronRight, Terminal, FileCode, Eye, List, Cpu } from "lucide-react";
+import { useState } from 'react';
+const Homep3 = () => {
+    const [isTestExpanded, setIsTestExpanded] = useState(true);
+    return (
+        <div>
+            <div className='w-full min-h-screen bg-[#131926] md:px-16 md:py-16 p-4'>
+                <span className='text-xs uppercase text-indigo-600'>Stay in control</span>
+                <h1 class="text-4xl max-w-2xl md:text-5xl text-white font-bold tracking-tight mt-4 mb-10">
+                    Watch every command. Nothing hidden.
+                </h1>
+                <div className='flex items-center justify-center '>
+                <div className='w-1/2'>
+                    <ul className='text-white flex flex-col gap-4'>
+                        <div className='flex gap-2'>
+                            <p className='text-indigo-600 bg-indigo-500/10 h-6 w-6 rounded-full flex items-center justify-center '><Check size={14} /> </p> <li>Keep observing exactly what the integrated LLM is doing — the commands, directly.</li>
+                        </div>
+                        <div className='flex gap-2'>
+                            <p className='text-indigo-600 bg-indigo-500/10 h-6 w-6 rounded-full flex items-center justify-center '><Check size={14} /> </p><li>Open any command to view its details. Skip the walls of messages, plans, and edits.</li>
+                        </div>
+                        <div className='flex gap-2'>
+                            <p className='text-indigo-600 bg-indigo-500/10 h-6 w-6 rounded-full flex items-center justify-center '><Check size={14} /> </p><li>The whole picture in a single glance — not endless scrolling.</li>
+                        </div>
+                        <div className='flex gap-2'>
+                            <p className='text-indigo-600 bg-indigo-500/10 h-6 w-6 rounded-full flex items-center justify-center '><Check size={14} /> </p><li>Pick the skills you allow. Stop the session anytime.</li>
+                        </div>
+                    </ul>
+                </div>
+                <div className='w-1/2'>
+                    <div className="w-full max-w-2xl bg-[#0d1117]/90 text-zinc-300 font-sans rounded-xl border border-white/10 shadow-2xl overflow-hidden backdrop-blur-md">
+                        {/* Header Section */}
+                        <div className="flex items-center justify-between px-4 py-3 border-b border-white/5 bg-white/[0.02]">
+                            <div className="flex items-center gap-2">
+                                <span className="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                                <span className="text-sm font-medium text-white">Live activity</span>
+                            </div>
+                            <span className="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Commands</span>
+                        </div>
+                        {/* Activities / Logs List */}
+                        <div className="divide-y divide-white/5">
+                            {/* Item 1: npm test (Expandable Terminal Output) */}
+                            <div className="bg-white/[0.01]">
+                                <button
+                                    onClick={() => setIsTestExpanded(!isTestExpanded)}
+                                    className="w-full flex items-center justify-between px-4 py-3 hover:bg-white/[0.02] transition-colors font-mono text-xs sm:text-sm"
+                                >
+                                    <div className="flex items-center gap-3 text-zinc-100">
+                                        {isTestExpanded ? <ChevronDown size={16} className="text-zinc-500" /> : <ChevronRight size={16} className="text-zinc-500" />}
+                                        <Terminal size={16} className="text-indigo-600" />
+                                        <span className=" text-white">$ npm test</span>
+                                    </div>
+                                    <div className="text-zinc-500 font-mono text-xs flex gap-2">
+                                        <span className="text-zinc-500 px-1.5 py-0.5 rounded text-[10px]">exit 0</span>
+                                        <span>2.1s</span>
+                                    </div>
+                                </button>
+                                {/* Collapsible Log Content */}
+                                {isTestExpanded && (
+                                    <div className="px-11 pb-4 pt-1 text-xs text-zinc-400 font-mono border-t border-white/[0.02] bg-black/20">
+                                        <p className="leading-relaxed">
+                                        42 passing. Output streamed back as it ran — expand to read the full log, or leave it collapsed.
+                                        </p>
+                                    </div>
+                                )}
+                            </div>
+                            {/* Item 2: Edit File */}
+                            
+                            <div className="bg-white/[0.01]">
+                             <button
+                                    onClick={() => setIsTestExpanded(!isTestExpanded)}
+                            className="w-full flex items-center justify-between px-4 py-3 hover:bg-white/[0.02] transition-colors font-mono text-xs sm:text-sm">
+                                <div className="flex items-center gap-3">
+                                     {isTestExpanded ? <ChevronDown size={16} className="text-zinc-500" /> : <ChevronRight size={16} className="text-zinc-500" />}
+                                   <FileCode size={16} className="text-indigo-600" />
+                                    <span className="text-zinc-200">edit src/auth/login.ts</span>
+                                    </div>
+                                    <div>
+                                      <span className="text-xs text-zinc-500">+14 -3</span>
+                                </div>
+                                </button>
+                                  {/* Collapsible Log Content */}
+                                {isTestExpanded && (
+                                    <div className="px-11 pb-4 pt-1 text-xs text-zinc-400 font-mono border-t border-white/[0.02] bg-black/20">
+                                        <p className="leading-relaxed">
+                                            A focused diff. The command line is the summary; open it only when you want the exact edit.
+                                        </p>
+                                    </div>
+                                )}
+                            </div>
+                            {/* Item 3: Read File */}
+                            <div className='bg-white/[0.01]'>
+                            <button
+                                    onClick={() => setIsTestExpanded(!isTestExpanded)}
+                             className="w-full flex items-center justify-between px-4 py-3 hover:bg-white/[0.02] transition-colors font-mono text-xs sm:text-sm">
+                                <div className="flex items-center gap-3">
+                                {isTestExpanded ? <ChevronDown size={16} className="text-zinc-500" /> : <ChevronRight size={16} className="text-zinc-500" />}
+                                    <Eye size={16} className="text-indigo-600" />
+                                    <span className="text-zinc-200">read src/server.ts</span>
+                                </div>
+                                <div>
+                                <span className="text-xs text-zinc-500">184 lines</span>
+                                </div>
+                                </button>
+                                 {/* Collapsible Log Content */}
+                                {isTestExpanded && (
+                                    <div className="px-11 pb-4 pt-1 text-xs text-zinc-400 font-mono border-t border-white/[0.02] bg-black/20">
+                                        <p className="leading-relaxed">
+                                            The model read the file before touching it. You see that it happened — no wall of text to scroll.
+                                        </p>
+                                    </div>
+                                )}
+                            </div>
+                            {/* Item 4: List Routes */}
+                             <div className='bg-white/[0.01]'>
+                            <button
+                                    onClick={() => setIsTestExpanded(!isTestExpanded)}
+                             className="w-full flex items-center justify-between px-4 py-3 hover:bg-white/[0.02] transition-colors font-mono text-xs sm:text-sm">
+                                <div className="flex items-center gap-3">
+                                {isTestExpanded ? <ChevronDown size={16} className="text-zinc-500" /> : <ChevronRight size={16} className="text-zinc-500" />}
+                                    <List size={16} className="text-indigo-600" />
+                                    <span className="text-zinc-400">list</span>
+                                    <span className="text-zinc-200">src/routes</span>
+                                </div>
+                                <div>
+                                <span className="text-xs text-zinc-500">7 entries</span>
+                                </div>
+                                </button>
+                                  {/* Collapsible Log Content */}
+                                {isTestExpanded && (
+                                    <div className="px-11 pb-4 pt-1 text-xs text-zinc-400 font-mono border-t border-white/[0.02] bg-black/20">
+                                        <p className="leading-relaxed">
+                                            The model read the file before touching it. You see that it happened — no wall of text to scroll.
+                                        </p>
+                                    </div>
+                                )}
+                            </div>
+                            {/* Item 5: Skill Status */}
+                             <div className='bg-white/[0.01]'>
+                            <button
+                                    onClick={() => setIsTestExpanded(!isTestExpanded)}
+                            className="w-full flex items-center justify-between px-4 py-3 hover:bg-white/[0.02] transition-colors font-mono text-xs sm:text-sm">
+                                <div className="flex items-center gap-3">
+                                      {isTestExpanded ? <ChevronDown size={16} className="text-zinc-500" /> : <ChevronRight size={16} className="text-zinc-500" />}
+                                    <Cpu size={16} className="text-indigo-600" />
+                                    <span className="text-zinc-400">skill</span>
+                                    <span className="text-zinc-500">•</span>
+                                    <span className="text-zinc-200 font-sans">API Development</span>
+                                </div>
+                                <div>
+                                <span className="text-xs text-zinc-500 px-2 py-0.5 rounded-full font-sans text-[11px] font-medium tracking-wide">
+                                    active
+                                </span>
+                                </div>
+                                </button>
+                                 {/* Collapsible Log Content */}
+                                {isTestExpanded && (
+                                    <div className="px-11 pb-4 pt-1 text-xs text-zinc-400 font-mono border-t border-white/[0.02] bg-black/20">
+                                        <p className="leading-relaxed">
+                                            The model read the file before touching it. You see that it happened — no wall of text to scroll.
+                                        </p>
+                                    </div>
+                                )}
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Homep3
