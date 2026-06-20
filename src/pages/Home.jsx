@@ -5,6 +5,12 @@ import Homep2 from '../components/Homep2';
 import Homep3 from '../components/Homep3';
 import Homep4 from '../components/Homep4';
 import Homep5 from '../components/Homep5';
+import Homep6 from '../components/Homep6';
+import Homep7 from '../components/Homep7';
+import Homep8 from '../components/Homep8';
+import Homep9 from '../components/Homep9';
+import Homep10 from '../components/Homep10';
+import Footer from '../components/Footer';
 const Home = () => {
   return (
     <>
@@ -39,6 +45,12 @@ In active development — early access is admin-granted, free. EigenMCP is a too
 <Homep3/>
 <Homep4/>
 <Homep5/>
+<Homep6/>
+<Homep7/>
+<Homep8/>
+<Homep9/>
+<Homep10/>
+<Footer/>
     </>
   )
 }

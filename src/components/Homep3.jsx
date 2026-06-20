@@ -2,10 +2,13 @@ import React from 'react'
 import { Check, ChevronDown, ChevronRight, Terminal, FileCode, Eye, List, Cpu } from "lucide-react";
 import { useState } from 'react';
 const Homep3 = () => {
-    const [isTestExpanded, setIsTestExpanded] = useState(true);
+    const [expandedSection, setExpandedSection] = useState(null);
+    const toggleSection = (sectionName) =>{
+        setExpandedSection(expandedSection === sectionName ? null : sectionName);
+    }
     return (
         <div>
-            <div className='w-full min-h-screen bg-[#131926] md:px-16 md:py-16 p-4'>
+            <div className='w-full h-auto bg-[#131926] md:px-16 md:py-16 p-4'>
                 <span className='text-xs uppercase text-indigo-600'>Stay in control</span>
                 <h1 class="text-4xl max-w-2xl md:text-5xl text-white font-bold tracking-tight mt-4 mb-10">
                     Watch every command. Nothing hidden.
@@ -42,11 +45,11 @@ const Homep3 = () => {
                             {/* Item 1: npm test (Expandable Terminal Output) */}
                             <div className="bg-white/[0.01]">
                                 <button
-                                    onClick={() => setIsTestExpanded(!isTestExpanded)}
+                                    onClick={() => toggleSection('npm-test')}
                                     className="w-full flex items-center justify-between px-4 py-3 hover:bg-white/[0.02] transition-colors font-mono text-xs sm:text-sm"
                                 >
                                     <div className="flex items-center gap-3 text-zinc-100">
-                                        {isTestExpanded ? <ChevronDown size={16} className="text-zinc-500" /> : <ChevronRight size={16} className="text-zinc-500" />}
+                                        {expandedSection === 'npm-test' ? <ChevronDown size={16} className="text-zinc-500" /> : <ChevronRight size={16} className="text-zinc-500" />}
                                         <Terminal size={16} className="text-indigo-600" />
                                         <span className=" text-white">$ npm test</span>
                                     </div>
@@ -56,7 +59,7 @@ const Homep3 = () => {
                                     </div>
                                 </button>
                                 {/* Collapsible Log Content */}
-                                {isTestExpanded && (
+                                {expandedSection === 'npm-test' && (
                                     <div className="px-11 pb-4 pt-1 text-xs text-zinc-400 font-mono border-t border-white/[0.02] bg-black/20">
                                         <p className="leading-relaxed">
                                         42 passing. Output streamed back as it ran — expand to read the full log, or leave it collapsed.
@@ -68,10 +71,10 @@ const Homep3 = () => {
                             
                             <div className="bg-white/[0.01]">
                              <button
-                                    onClick={() => setIsTestExpanded(!isTestExpanded)}
+                                    onClick={() => toggleSection('edit-file')}
                             className="w-full flex items-center justify-between px-4 py-3 hover:bg-white/[0.02] transition-colors font-mono text-xs sm:text-sm">
                                 <div className="flex items-center gap-3">
-                                     {isTestExpanded ? <ChevronDown size={16} className="text-zinc-500" /> : <ChevronRight size={16} className="text-zinc-500" />}
+                                     {expandedSection === 'edit-file' ? <ChevronDown size={16} className="text-zinc-500" /> : <ChevronRight size={16} className="text-zinc-500" />}
                                    <FileCode size={16} className="text-indigo-600" />
                                     <span className="text-zinc-200">edit src/auth/login.ts</span>
                                     </div>
@@ -80,7 +83,7 @@ const Homep3 = () => {
                                 </div>
                                 </button>
                                   {/* Collapsible Log Content */}
-                                {isTestExpanded && (
+                                {expandedSection === 'edit-file' && (
                                     <div className="px-11 pb-4 pt-1 text-xs text-zinc-400 font-mono border-t border-white/[0.02] bg-black/20">
                                         <p className="leading-relaxed">
                                             A focused diff. The command line is the summary; open it only when you want the exact edit.
@@ -91,10 +94,10 @@ const Homep3 = () => {
                             {/* Item 3: Read File */}
                             <div className='bg-white/[0.01]'>
                             <button
-                                    onClick={() => setIsTestExpanded(!isTestExpanded)}
+                                    onClick={() => toggleSection('read-src')}
                              className="w-full flex items-center justify-between px-4 py-3 hover:bg-white/[0.02] transition-colors font-mono text-xs sm:text-sm">
                                 <div className="flex items-center gap-3">
-                                {isTestExpanded ? <ChevronDown size={16} className="text-zinc-500" /> : <ChevronRight size={16} className="text-zinc-500" />}
+                                {expandedSection === 'read-src' ? <ChevronDown size={16} className="text-zinc-500" /> : <ChevronRight size={16} className="text-zinc-500" />}
                                     <Eye size={16} className="text-indigo-600" />
                                     <span className="text-zinc-200">read src/server.ts</span>
                                 </div>
@@ -103,7 +106,7 @@ const Homep3 = () => {
                                 </div>
                                 </button>
                                  {/* Collapsible Log Content */}
-                                {isTestExpanded && (
+                                {expandedSection === 'read-src' && (
                                     <div className="px-11 pb-4 pt-1 text-xs text-zinc-400 font-mono border-t border-white/[0.02] bg-black/20">
                                         <p className="leading-relaxed">
                                             The model read the file before touching it. You see that it happened — no wall of text to scroll.
@@ -114,10 +117,10 @@ const Homep3 = () => {
                             {/* Item 4: List Routes */}
                              <div className='bg-white/[0.01]'>
                             <button
-                                    onClick={() => setIsTestExpanded(!isTestExpanded)}
+                                    onClick={() => toggleSection('list')}
                              className="w-full flex items-center justify-between px-4 py-3 hover:bg-white/[0.02] transition-colors font-mono text-xs sm:text-sm">
                                 <div className="flex items-center gap-3">
-                                {isTestExpanded ? <ChevronDown size={16} className="text-zinc-500" /> : <ChevronRight size={16} className="text-zinc-500" />}
+                                {expandedSection === 'list' ? <ChevronDown size={16} className="text-zinc-500" /> : <ChevronRight size={16} className="text-zinc-500" />}
                                     <List size={16} className="text-indigo-600" />
                                     <span className="text-zinc-400">list</span>
                                     <span className="text-zinc-200">src/routes</span>
@@ -127,7 +130,7 @@ const Homep3 = () => {
                                 </div>
                                 </button>
                                   {/* Collapsible Log Content */}
-                                {isTestExpanded && (
+                                {expandedSection === 'list' && (
                                     <div className="px-11 pb-4 pt-1 text-xs text-zinc-400 font-mono border-t border-white/[0.02] bg-black/20">
                                         <p className="leading-relaxed">
                                             The model read the file before touching it. You see that it happened — no wall of text to scroll.
@@ -138,10 +141,10 @@ const Homep3 = () => {
                             {/* Item 5: Skill Status */}
                              <div className='bg-white/[0.01]'>
                             <button
-                                    onClick={() => setIsTestExpanded(!isTestExpanded)}
+                                    onClick={() => toggleSection('skill')}
                             className="w-full flex items-center justify-between px-4 py-3 hover:bg-white/[0.02] transition-colors font-mono text-xs sm:text-sm">
                                 <div className="flex items-center gap-3">
-                                      {isTestExpanded ? <ChevronDown size={16} className="text-zinc-500" /> : <ChevronRight size={16} className="text-zinc-500" />}
+                                      {expandedSection === 'skill' ? <ChevronDown size={16} className="text-zinc-500" /> : <ChevronRight size={16} className="text-zinc-500" />}
                                     <Cpu size={16} className="text-indigo-600" />
                                     <span className="text-zinc-400">skill</span>
                                     <span className="text-zinc-500">•</span>
@@ -154,7 +157,7 @@ const Homep3 = () => {
                                 </div>
                                 </button>
                                  {/* Collapsible Log Content */}
-                                {isTestExpanded && (
+                                {expandedSection === 'skill' && (
                                     <div className="px-11 pb-4 pt-1 text-xs text-zinc-400 font-mono border-t border-white/[0.02] bg-black/20">
                                         <p className="leading-relaxed">
                                             The model read the file before touching it. You see that it happened — no wall of text to scroll.

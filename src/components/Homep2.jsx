@@ -25,7 +25,7 @@ const Homep2 = () => {
     ]
   return (
     <div>
-      <div className='w-full min-h-screen bg-[#0b0f19] md:px-16 md:py-16 p-4'>
+      <div className='w-full h-auto bg-[#0b0f19] md:px-16 md:py-16 p-4'>
         <span className='text-xs uppercase text-indigo-600'>Why EigenMCP</span>
         <h1 class="text-4xl max-w-2xl md:text-5xl text-white font-bold tracking-tight mt-4 mb-10">
       Skills and speed — with the codebase in your hands

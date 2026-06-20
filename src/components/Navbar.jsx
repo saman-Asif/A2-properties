@@ -48,12 +48,12 @@ to='/faq'>FAQ</Link>
 <button className='border-white/30 border p-1 rounded-md hover:border-purple-700 transition-colors duration-300 ease-in-out'>
   <Sun size={22} />
 </button>
-<button className='text-white text-center font-bold hover:text-purple-700 hover:bg-white rounded-lg px-4 py-2.5'> 
+<Link to='/signin'><button className='text-white text-center font-bold hover:text-purple-700 hover:bg-white rounded-lg px-4 py-2.5'> 
   Sign in
-</button>
-<button className='bg-purple-600 font-bold hover:bg-purple-700 text-[#181818D9] px-5 py-2.5 rounded-lg'>
+</button></Link>
+<Link to='/requestaccess'><button className='bg-purple-600 font-bold hover:bg-purple-700 text-[#181818D9] px-5 py-2.5 rounded-lg'>
   Request Access
-</button>
+</button></Link>
           </div>
           </div>
     </>
