@@ -33,13 +33,13 @@ const Footer = () => {
         <p className='text-white/40 font-semibold text-xs tracking-widest uppercase'>GET STARTED</p>
         <ul className='space-y-3 mt-3'>
             <li>
-                  <Link className="nav-link hover:text-white text-white/70 text-sm" to="/">Request Access</Link>
+                  <Link className="nav-link hover:text-white text-white/70 text-sm" to="/requestaccess">Request Access</Link>
             </li>
             <li>
                   <Link className="nav-link hover:text-white text-white/70 text-sm" to="/faq">FAQ</Link>
             </li>
              <li>
-                  <Link className="nav-link hover:text-white text-white/70 text-sm" to="/">Sign In</Link>
+                  <Link className="nav-link hover:text-white text-white/70 text-sm" to="/signin">Sign In</Link>
             </li>
             </ul>
     </div3>

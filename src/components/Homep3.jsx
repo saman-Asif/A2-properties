@@ -8,13 +8,13 @@ const Homep3 = () => {
     }
     return (
         <div>
-            <div className='w-full h-auto bg-[#131926] md:px-16 md:py-16 p-4'>
+            <div className='w-full reveal-elements h-auto bg-[#131926] md:px-16 py-16 p-4'>
                 <span className='text-xs uppercase text-indigo-600'>Stay in control</span>
                 <h1 class="text-4xl max-w-2xl md:text-5xl text-white font-bold tracking-tight mt-4 mb-10">
                     Watch every command. Nothing hidden.
                 </h1>
-                <div className='flex items-center justify-center '>
-                <div className='w-1/2'>
+                <div className='flex flex-col md:flex-row items-center justify-center '>
+                <div className='md:w-1/2 w-full'>
                     <ul className='text-white flex flex-col gap-4'>
                         <div className='flex gap-2'>
                             <p className='text-indigo-600 bg-indigo-500/10 h-6 w-6 rounded-full flex items-center justify-center '><Check size={14} /> </p> <li>Keep observing exactly what the integrated LLM is doing — the commands, directly.</li>
@@ -30,7 +30,7 @@ const Homep3 = () => {
                         </div>
                     </ul>
                 </div>
-                <div className='w-1/2'>
+                <div className='md:w-1/2 w-full mt-8 reveal-elements md:mt-1'>
                     <div className="w-full max-w-2xl bg-[#0d1117]/90 text-zinc-300 font-sans rounded-xl border border-white/10 shadow-2xl overflow-hidden backdrop-blur-md">
                         {/* Header Section */}
                         <div className="flex items-center justify-between px-4 py-3 border-b border-white/5 bg-white/[0.02]">

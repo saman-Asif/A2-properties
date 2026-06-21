@@ -31,7 +31,7 @@ const [openIndex, setOpenIndex] = useState(null);
   };
   return (
     <div>
-      <div className='w-full h-auto  bg-[#131926] md:px-16 py-16 md:py-16 p-4'>
+      <div className='w-full reveal-elements h-auto  bg-[#131926] md:px-16 py-16 p-4'>
         <span className='text-xs uppercase text-indigo-600'>FAQ</span>
         <h1 class="text-4xl max-w-2xl md:text-5xl text-white font-bold tracking-tight mt-4 mb-8">
       Good questions to ask

@@ -5,7 +5,7 @@ const Signin = () => {
   return (
     <div>
       <div className='bg-black w-full min-h-screen flex '>
-<div className='bg-[#131926] w-1/2 min-h-screen md:px-20 md:py-20 p-4 flex flex-col justify-center items-center'>
+<div className='bg-[#131926] w-full lg:w-1/2 min-h-screen md:px-20 md:py-20 p-4 flex flex-col justify-center items-center'>
 <div className='max-w-md flex flex-col items-start'>
  <img className='object-cover w-35' src="https://eigenmcp.eigensol.com/brand/eigensol-wordmark.png" alt="" />
  <p className='uppercase text-white/60 tracking-widest text-xs mt-6'>Welcome back</p>
@@ -42,7 +42,7 @@ Sign In
 </div>
 </div>
 </div>
-<div className='w-1/2 bg-indigo-600 min-h-screen flex flex-col justify-center items-center md:px-20 md:py-20 p-4'>
+<div className='lg:w-1/2 hidden sm:hidden md:hidden bg-indigo-600 min-h-screen lg:flex flex-col justify-center items-center md:px-20 md:py-20 p-4'>
 <div className='max-w-md flex flex-col items-start gap-4'>
     <span className='text-white text-sm uppercase tracking-wider'>EigenMCP</span>
     <h1 className='text-white text-3xl lg:text-4xl font-bold'>Run MCP workflows from a polished launchpad.</h1>

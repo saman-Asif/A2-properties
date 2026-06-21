@@ -8,8 +8,8 @@ const Herobox = () => {
         {h1: '∞',p: 'skills, and growing'}
     ]
   return (
-    <div className=' bg-[#0e131d] h-full w-full px-16 py-8 border-t border-white/10 border-b'>
-        <div className='max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center'>
+    <div className=' bg-[#0e131d] reveal-elements h-full w-full px-16 py-8 border-t border-white/10 border-b'>
+        <div className='max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center'>
         {data.map((item, index)=>(
             <div key={index} className='flex flex-col items-center justify-center gap-2'>
                 <div className='grid'>

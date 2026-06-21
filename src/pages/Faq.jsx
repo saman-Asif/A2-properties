@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Box from '../components/Box';
 import Footer from '../components/Footer';
+import FadeInUp from '../components/FadeInUp';
 const Faq = () => {
    const faqs = [
   {
@@ -47,13 +48,17 @@ const [openIndex, setOpenIndex] = useState(null);
     <>
     <div>
        <div className='w-full h-auto  bg-[#131926] md:px-16 py-16 md:py-20 p-4'>
-              <span className='text-xs uppercase text-indigo-600'>FAQ</span>
+        <FadeInUp delay={0.2}>
+              <span className='text-xs uppercase text-indigo-600'>FAQ</span></FadeInUp>
+              <FadeInUp delay={0.2}>
               <h1 class="text-4xl max-w-2xl md:text-5xl text-white font-bold tracking-tight mt-3 mb-4">
             Questions, answered
-          </h1>
+          </h1></FadeInUp>
+          <FadeInUp delay={0.2}>
            <p className='text-white/60 text-lg max-w-2xl mb-12 md:mb-20'>
               What EigenMCP is, what it does with your code, and how you stay in control.
-          </p>
+          </p></FadeInUp>
+          <FadeInUp delay={0.2}>
            <div className=" gap-3 grid md:grid-cols-2 justify-center items-center">
                 {faqs.map((faq, index) => {
                   const isOpen = openIndex === index;
@@ -88,7 +93,7 @@ const [openIndex, setOpenIndex] = useState(null);
                     </div>
                   );
                 })}
-              </div>
+              </div></FadeInUp>
           </div>
           </div>
            <Box />

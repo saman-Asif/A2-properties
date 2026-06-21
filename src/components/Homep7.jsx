@@ -21,7 +21,7 @@ const Homep7 = () => {
     ]
   return (
     <div>
-       <div className='w-full h-auto  bg-[#131926] md:px-16 md:py-16 p-4'>
+       <div className='w-full h-auto reveal-elements bg-[#131926] md:px-16 py-16 p-4'>
         <span className='text-xs uppercase text-indigo-600'>The integration</span>
         <h1 class="text-4xl max-w-2xl md:text-5xl text-white font-bold tracking-tight mt-4 mb-4">
       Turn your LLM into a development integration
@@ -29,7 +29,7 @@ const Homep7 = () => {
     <p className='text-white/60 text-lg max-w-2xl mb-10'>
         The model thinks in the cloud; your machine does the work.
     </p>
-    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto'>
+    <div className='grid grid-cols-1 md:grid-cols-2 reveal-elements lg:grid-cols-3 gap-6 mx-auto'>
         {data.map((item, index)=>(
     <div key={index} className='border bg-[#0c101a] border-white/20 rounded-2xl p-4 flex flex-col gap-4 '> 
          <div className='text-indigo-600 shrink-0 bg-indigo-500/10 w-12 h-12 mt-2 rounded-xl flex items-center justify-center'>{item.icon}</div>

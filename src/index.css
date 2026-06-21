@@ -1,1 +1,25 @@
 @import "tailwindcss";
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-elements > * {
+  opacity: 0;
+  animation: fadeInUp 0.8s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+}
+
+/* Automatically adds cascading delays to the first 5 elements */
+.reveal-elements > *:nth-child(1) { animation-delay: 0.1s; }
+.reveal-elements > *:nth-child(2) { animation-delay: 0.25s; }
+.reveal-elements > *:nth-child(3) { animation-delay: 0.4s; }
+.reveal-elements > *:nth-child(4) { animation-delay: 0.55s; }
+.reveal-elements > *:nth-child(5) { animation-delay: 0.7s; }
+
+

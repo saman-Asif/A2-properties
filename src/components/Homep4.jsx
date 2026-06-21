@@ -3,13 +3,13 @@ import { Check,X } from "lucide-react";
 const Homep4 = () => {
   return (
     <div>
-       <div className='w-full h-auto bg-[#0b0f19] md:px-16 md:py-16 p-4'>
+       <div className='w-full h-auto reveal-elements bg-[#0b0f19] md:px-16 py-16 p-4'>
         <span className='text-xs uppercase text-indigo-600'>The difference</span>
         <h1 class="text-4xl max-w-2xl md:text-5xl text-white font-bold tracking-tight mt-4 mb-10">
       Stop pasting. Start integrating.
     </h1>
-    <div className='flex gap-4'>
-        <div className='left-div w-1/2 border bg-[#131926] border-white/20 rounded-2xl p-6 flex flex-col gap-4 '>
+    <div className='flex flex-col md:flex-row gap-4'>
+        <div className='left-div w-full md:w-1/2 border bg-[#131926] border-white/20 rounded-2xl p-6 flex flex-col gap-4 '>
         <h2 className='text-lg font-bold text-white/60 leading-relaxed'>A plain chat LLM
 </h2>
         <ul className='text-sm text-white/60 leading-relaxed flex flex-col gap-2'>
@@ -30,7 +30,7 @@ const Homep4 = () => {
             </div>
         </ul>
         </div>
-        <div className='right-div w-1/2 border bg-[#676769] border-indigo-600 rounded-2xl p-6 flex flex-col gap-4 '>
+        <div className='right-div reveal-elements w-full md:w-1/2 border bg-[#676769] border-indigo-600 rounded-2xl p-6 flex flex-col gap-4 '>
 <h2 className='text-lg font-bold text-white leading-relaxed'>EigenMCP integration
 </h2>
         <ul className='text-sm text-white leading-relaxed flex flex-col gap-2'>

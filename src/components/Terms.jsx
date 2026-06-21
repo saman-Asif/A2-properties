@@ -4,8 +4,8 @@ import Footer from './Footer'
 const Terms = () => {
   return (
     <>
-       <div className='w-full h-auto bg-[#131926] md:px-16 md:py-16 p-4'>
-        <div className='flex flex-col'>
+       <div className='w-full reveal-elements h-auto bg-[#131926] md:px-16 md:py-16 flex flex-col justify-center items-center p-4'>
+        <div className='flex flex-col items-start'>
         <span className='text-xs uppercase text-indigo-600'>Legal</span>
         <h1 class="text-3xl max-w-2xl md:text-5xl text-white font-bold tracking-tight mt-4 mb-4">
       Terms & Conditions

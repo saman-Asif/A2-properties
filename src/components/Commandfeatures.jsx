@@ -8,13 +8,13 @@ const Commandfeatures = () => {
     }
     return (
         <div>
-            <div className='w-full h-auto bg-[#0b0f19] md:px-16 md:py-20 p-4'>
+            <div className='w-full reveal-elements h-auto bg-[#0b0f19] md:px-16 py-16 md:py-20 p-4'>
                 <span className='text-xs uppercase text-indigo-600'>Stay in control</span>
                 <h1 class="text-4xl max-w-2xl md:text-5xl text-white font-bold tracking-tight mt-4 mb-10">
                     Watch every command. Nothing hidden.
                 </h1>
-                <div className='flex flex-col md:flex-row items-center gap-8 justify-center mb-13'>
-                    <div className='w-1/2'>
+                <div className='flex flex-col reveal-elements md:flex-row items-center gap-8 justify-center mb-13'>
+                    <div className='md:w-1/2 w-full'>
                         <div className="w-full max-w-2xl bg-[#0d1117]/90 text-zinc-300 font-sans rounded-xl border border-white/10 shadow-2xl overflow-hidden backdrop-blur-md">
                             {/* Header Section */}
                             <div className="flex items-center justify-between px-4 py-3 border-b border-white/5 bg-white/[0.02]">
@@ -152,7 +152,7 @@ const Commandfeatures = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='w-1/2'>
+                    <div className='md:w-1/2 w-full'>
                         <p className='text-white/45 text-md max-w-2xl'>
                             Instead of scrolling through long messages, plans, and diffs, you see a clean stream of the commands the model runs. Each line is the summary; open one only when you want the detail. The complete picture, in a single glance.
                         </p>

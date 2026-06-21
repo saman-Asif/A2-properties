@@ -1,6 +1,8 @@
 import React from 'react'
 import { Check, ChevronDown, ChevronRight, Terminal, FileCode, Eye, List, Cpu } from "lucide-react";
 import { useState } from 'react';
+import FadeInUp from './FadeInUp';
+import { Link } from 'react-router-dom';
 const Commandbox = () => {
     const [expandedSection, setExpandedSection] = useState(null);
     const toggleSection = (sectionName) => {
@@ -8,13 +10,16 @@ const Commandbox = () => {
     }
     return (
         <div>
-            <div className='w-full h-auto bg-[#0b0f19] md:px-16 md:py-20 p-4'>
+            <div className='w-full reveal-elements h-auto bg-[#0b0f19] md:px-16 py-16 md:py-20 p-4'>
+               
                 <span className='text-xs uppercase text-indigo-600'>Stay in control</span>
+                
                 <h1 class="text-4xl max-w-2xl md:text-5xl text-white font-bold tracking-tight mt-4 mb-10">
                     Watch every command. Nothing hidden.
                 </h1>
-                <div className='flex items-center justify-center mb-13'>
-                    <div className='w-1/2'>
+                <div className='flex flex-col md:flex-row items-center reveal-elements justify-center mb-13'>
+                    <div className='md:w-1/2 w-full'>
+                   
                         <ul className='text-white flex flex-col gap-4 max-w-xl'>
                             <div className='flex gap-2'>
                                 <p className='text-indigo-600 bg-indigo-500/10 h-6 w-6 rounded-full flex items-center justify-center '><Check size={14} /> </p> <li>The commands the model runs — directly, as a clean stream.</li>
@@ -27,8 +32,8 @@ const Commandbox = () => {
                             </div>
                         </ul>
                     </div>
-                    <div className='w-1/2'>
-                        <div className="w-full max-w-2xl bg-[#0d1117]/90 text-zinc-300 font-sans rounded-xl border border-white/10 shadow-2xl overflow-hidden backdrop-blur-md">
+                    <div className='md:w-1/2 w-full reveal-elements'>
+                        <div className="w-full max-w-2xl md:mt-1 mt-8 bg-[#0d1117]/90 text-zinc-300 font-sans rounded-xl border border-white/10 shadow-2xl overflow-hidden backdrop-blur-md">
                             {/* Header Section */}
                             <div className="flex items-center justify-between px-4 py-3 border-b border-white/5 bg-white/[0.02]">
                                 <div className="flex items-center gap-2">
@@ -166,9 +171,10 @@ const Commandbox = () => {
                         </div>
                     </div>
                 </div>
+                <Link to='/requestaccess'>
                 <button className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-black font-medium rounded-lg shadow-lg transition-colors duration-300">
             Request Access
-          </button>
+          </button></Link>
             </div>
         </div>
     )

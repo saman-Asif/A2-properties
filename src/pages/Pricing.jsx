@@ -1,6 +1,7 @@
 import React from 'react'
 import {Eye, Boxes ,Zap, ShieldCheck, ArrowRight} from 'lucide-react'
 import Footer from '../components/Footer'
+import { Link } from 'react-router-dom'
 const Pricing = () => {
   const data = [
         {
@@ -21,7 +22,7 @@ const Pricing = () => {
     ]
   return (
     <div>
-      <div className='w-full h-auto  bg-[#0b0f19] md:px-16 md:py-20 p-4'>
+      <div className='w-full reveal-elements min-h-screen bg-[#0b0f19] md:px-16 py-16 md:py-20 p-4'>
               <span className='text-xs uppercase text-indigo-600'>Pricing</span>
               <h1 class="text-4xl max-w-2xl md:text-5xl text-white font-bold tracking-tight mt-4 mb-4">
             Pricing is launching soon
@@ -29,7 +30,7 @@ const Pricing = () => {
           <p className='text-white/60 text-lg max-w-2xl mb-12 md:mb-20'>
             We're still in active development. Plans and features will be shared soon — for now, access is free and granted by an admin.
           </p>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto'>
+          <div className='relative blur-sm select-none grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto'>
         {data.map((item, index)=>(
     <div key={index} className='border bg-[#0c101a] border-white/20 rounded-2xl p-4 flex flex-col gap-4 '> 
          <div className='text-indigo-600 shrink-0 bg-indigo-500/10 w-12 h-12 mt-2 rounded-xl flex items-center justify-center'>{item.icon}</div>
@@ -38,16 +39,17 @@ const Pricing = () => {
      ))}
      </div>
             {/* Blurred Semi-Transparent Overlay */}
-      <div className="absolute inset-0 top-80 z-80 flex items-center justify-center bg-gray-950/30 backdrop-blur-sm">
+      <div className="absolute top-95 inset-0 md:top-80 z-80 p-6 flex items-center justify-center bg-gray-950/30 backdrop-blur-sm">
         {/* Call to Action Container */}
-        <div className="flex flex-col items-center p-8 bg-white/1 backdrop-blur-sm border border-white/20 rounded-2xl shadow-2xl text-center">
+        <div className="flex max-w-sm flex-col items-center p-8 bg-white/1 backdrop-blur-sm border border-white/20 rounded-2xl shadow-2xl text-center">
           <h2 className="text-2xl font-semibold text-white mb-2">Launching soon</h2>
           <p className="text-gray-200 text-sm mb-6 max-w-xs">
           EigenMCP is in active development — plans and features will be shared soon. Request access to get started now, free, while we finish building.
           </p>
+          <Link to='/requestaccess'>
           <button className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-black font-medium rounded-lg shadow-lg transition-colors duration-300">
             Request Access
-          </button>
+          </button></Link>
         </div>
       </div>
           </div>
